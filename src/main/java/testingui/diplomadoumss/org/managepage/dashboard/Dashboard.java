@@ -21,7 +21,7 @@ public class Dashboard extends BasePage {
     private WebElement adminsClicked;
 
     public Dashboard() {
-        avoidToSecond(3);
+         avoidToSecond(3);
     }
 
     public Dashboard clickCarsExpand() {
