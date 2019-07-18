@@ -24,7 +24,8 @@ public class LoginStepdefs {
 
     @And("^Click 'Cars' link on 'Left Panel' Page$")
     public void clickCarsLinkOnLeftPanelPage() throws  Throwable {
-        dashboard.clickAccountsExpand();
-        dashboard.clickAdmindsOption();
+        dashboard.clickGeneralExpand();
+        dashboard.clickPaymentGatewaysOption();
+
     }
 }

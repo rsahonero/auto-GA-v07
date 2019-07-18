@@ -17,8 +17,14 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Accounts') and @aria-expanded='false']")
     private WebElement accountsExpand;
 
+    @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'General') and @aria-expanded='false']")
+    private WebElement generalExpand;
+
     @FindBy(xpath = "//ul[@id='social-sidebar-menu']//ul[@id='ACCOUNTS']//a[contains(., 'Admins')]")
     private WebElement adminsClicked;
+
+    @FindBy(xpath = "//ul[@id='social-sidebar-menu']//ul//a[contains(., 'Payment Gateways')]")
+    private WebElement  paymentsGaytwaysClicked;
 
     public Dashboard() {
         avoidToSecond(3);
@@ -36,6 +42,16 @@ public class Dashboard extends BasePage {
 
     public Dashboard clickAdmindsOption() {
         clickWebElement(adminsClicked);
+        return this;
+    }
+
+    public Dashboard clickGeneralExpand() {
+        clickWebElement(generalExpand);
+        return this;
+    }
+
+    public Dashboard clickPaymentGatewaysOption() {
+        clickWebElement(paymentsGaytwaysClicked);
         return this;
     }
 }
