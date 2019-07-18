@@ -1,5 +1,7 @@
 package testingui.diplomadoumss.org.managepage.dashboard;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.managepage.BasePage;
@@ -23,6 +25,13 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//div[@class='xcrud-top-actions']//div[@class='btn-group pull-right']//a[contains(., 'Print')]")
     private WebElement printClicked;
 
+    @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Blog') and @aria-expanded='false']")
+    private WebElement blogExpand;
+    ////*[@id="Blog"]/li[2]/a
+    //@FindBy(xpath = "//ul[@id='social-sidebar-menu']//ul[@id='Blog']//a[contains(., 'Blog Categories')]")
+    @FindBy(xpath = "//ul[@id='social-sidebar-menu']//ul[@id='Blog']//a[contains(text(),'Blog Categories')]")
+    private WebElement blogCategoriesClicked;
+
     public Dashboard() {
          avoidToSecond(3);
     }
@@ -45,5 +54,20 @@ public class Dashboard extends BasePage {
     public Dashboard clickPrintOption() {
         clickWebElement(printClicked);
         return this;
+    }
+
+    public Dashboard clickBlogExpand() {
+        clickWebElement(blogExpand);
+        return this;
+    }
+
+    public Dashboard clickBlogCategoriesOption() {
+        clickWebElement(blogCategoriesClicked);
+        return this;
+    }
+
+    public void moveTheScrollSidebarToDown(WebDriver driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.getElementById('sidebar').style.top = '-100px'");
     }
 }

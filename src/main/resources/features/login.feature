@@ -6,3 +6,6 @@ Feature: Validation of the login page
     And Click 'Accounts' link on 'Left Panel' Page
     And Click 'Admins' link on 'Accounts Expand'
     And Click 'PRINT' button on 'admin management' page
+  //Blog - Blog Categories
+    And Move Down The Sidebar Menu
+    And Click 'Blog' link on 'Blog Categories' Page
