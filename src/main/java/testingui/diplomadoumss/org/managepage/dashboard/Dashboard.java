@@ -20,6 +20,9 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//ul[@id='social-sidebar-menu']//ul[@id='ACCOUNTS']//a[contains(., 'Admins')]")
     private WebElement adminsClicked;
 
+    @FindBy(xpath = "//div[@class='xcrud-top-actions']//div[@class='btn-group pull-right']//a[contains(., 'Print')]")
+    private WebElement printClicked;
+
     public Dashboard() {
         avoidToSecond(3);
     }
@@ -34,8 +37,13 @@ public class Dashboard extends BasePage {
         return this;
     }
 
-    public Dashboard clickAdmindsOption() {
+    public Dashboard clickAdminsOption() {
         clickWebElement(adminsClicked);
+        return this;
+    }
+
+    public Dashboard clickPrintOption() {
+        clickWebElement(printClicked);
         return this;
     }
 }
