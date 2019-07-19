@@ -1,9 +1,11 @@
 package testingui.diplomadoumss.org.managepage.login;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import testingui.diplomadoumss.org.core.WaitMethods;
 import testingui.diplomadoumss.org.managepage.BasePage;
+import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 /**
  * @author Marcelo Garay
@@ -11,10 +13,21 @@ import testingui.diplomadoumss.org.managepage.BasePage;
  */
 public class Login extends BasePage {
 
-    @FindBy(xpath = "//input[@name='email' and @type='email']")
+    @FindBy(css = "input[name='email']")
     private WebElement emailTextField;
 
-    public void setEmail(String email){
-        emailTextField.sendKeys(email);
+    @FindBy(css = "input[name='password']")
+    private WebElement passwordTextField;
+
+    @FindBy(css = "button[type=submit]")
+    private WebElement loguinButton;
+
+
+    public void setCredentials() {
+        emailTextField.sendKeys(PropertyAccesor.getInstance().getUsername());
+        passwordTextField.sendKeys(PropertyAccesor.getInstance().getPassword());
+        loguinButton.click();
+        WaitMethods.waitJava(10000);
+
     }
 }

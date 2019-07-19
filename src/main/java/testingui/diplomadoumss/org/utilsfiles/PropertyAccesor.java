@@ -33,9 +33,18 @@ public class PropertyAccesor {
         return prop.getProperty("url");
     }
 
+    public String getUsername(){
+        return prop.getProperty("username");
+    }
+
+    public String getPassword(){
+        return prop.getProperty("password");
+    }
+
     public String getBrowser(){
         return prop.getProperty("browser");
     }
+
 
     public static void main(String[] args) {
         System.out.println(PropertyAccesor.getInstance().getURL());
