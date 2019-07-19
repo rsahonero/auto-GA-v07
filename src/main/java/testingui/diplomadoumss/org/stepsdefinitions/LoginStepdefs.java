@@ -2,15 +2,26 @@ package testingui.diplomadoumss.org.stepsdefinitions;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import org.openqa.selenium.WebDriver;
+import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.manageloadpage.LoadPage;
+import testingui.diplomadoumss.org.managepage.adminsmanagement.AdminsManagement;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.login.Login;
+
+import java.sql.Driver;
 
 public class LoginStepdefs {
 
     private Login login;
 
     private Dashboard dashboard;
+
+    private AdminsManagement adminsManagement;
+
+    private DriverManager driverManager;
+
+    private WebDriver webDriver;
 
     @Given("^I Load PHP Travels$")
     public void iLoadPHPTravels() throws Throwable {
@@ -26,6 +37,32 @@ public class LoginStepdefs {
     public void clickCarsLinkOnLeftPanelPage() throws  Throwable {
         dashboard.clickGeneralExpand();
         dashboard.clickPaymentGatewaysOption();
+    }
 
+    @And("^Click 'Accounts' link on 'Left Panel' Page$")
+    public void clickAccountsLinkOnLeftPanelPage() throws Throwable {
+        dashboard.clickAccountsExpand();
+    }
+
+    @And("^Click 'Admins' link on 'Accounts Expand'$")
+    public void clickAdminsLinkOnAccountsExpand() throws Throwable {
+        dashboard.clickAdminsOption();
+    }
+
+    @And("^Click 'PRINT' button on 'admin management' page$")
+    public void clickPRINTButtonOnAdminManagementPage() throws Throwable {
+        dashboard.clickPrintOption();
+    }
+
+    @And("^Click 'Blog' link on 'Blog Categories' Page$")
+    public void cliccBlogLinkOnBlogCategoriesPage() {
+        dashboard.clickBlogExpand();
+        dashboard.clickBlogCategoriesOption();
+    }
+
+    @And("^Move Down The Sidebar Menu$")
+    public void moveDownTheSidebarMenu() {
+        WebDriver driver = webDriver;
+        dashboard.moveTheScrollSidebarToDown(driver);
     }
 }
