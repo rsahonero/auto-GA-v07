@@ -9,7 +9,7 @@ import testingui.diplomadoumss.org.managepage.adminsmanagement.AdminsManagement;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.login.Login;
 
-import java.sql.Driver;
+import static testingui.diplomadoumss.org.manageevents.Event.avoidToSecond;
 
 public class LoginStepdefs {
 
@@ -33,10 +33,13 @@ public class LoginStepdefs {
         dashboard = login.setCredentials();
     }
 
-    @And("^Click 'Cars' link on 'Left Panel' Page$")
-    public void clickCarsLinkOnLeftPanelPage() throws  Throwable {
+    @And("^Click 'General' link on 'Left Panel' Page$")
+    public void clickGeneralLinkOnLeftPanelPage() throws  Throwable {
         dashboard.clickGeneralExpand();
+        avoidToSecond(4);
         dashboard.clickPaymentGatewaysOption();
+        avoidToSecond(4);
+        dashboard.clickMoveDown();
     }
 
     @And("^Click 'Accounts' link on 'Left Panel' Page$")

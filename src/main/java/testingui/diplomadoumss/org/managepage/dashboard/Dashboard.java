@@ -28,6 +28,9 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//ul[@id='social-sidebar-menu']//ul//a[contains(., 'Payment Gateways')]")
     private WebElement  paymentsGaytwaysClicked;
 
+    @FindBy(xpath = "//div[@id=\"accordion\"]//div[@class='panel panel-default'][1]//span")
+    private WebElement  movedownClicked;
+
     @FindBy(xpath = "//div[@class='xcrud-top-actions']//div[@class='btn-group pull-right']//a[contains(., 'Print')]")
     private WebElement printClicked;
 
@@ -85,5 +88,10 @@ public class Dashboard extends BasePage {
     public void moveTheScrollSidebarToDown(WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("document.getElementById('sidebar').style.top = '-100px'");
+    }
+
+    public Dashboard clickMoveDown(){
+        clickWebElement(movedownClicked);
+        return this;
     }
 }
