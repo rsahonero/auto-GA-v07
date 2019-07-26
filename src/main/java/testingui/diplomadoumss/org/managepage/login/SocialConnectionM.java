@@ -27,9 +27,9 @@ public class SocialConnectionM extends BasePage {
     public void AttachmentTest(){
 
         LocalFileDetector detector = new LocalFileDetector();
-        File file = detector.getLocalFile("D:\\test.png");
+        File file = detector.getLocalFile("D:\\icon.png");
         attach.sendKeys(file.getAbsolutePath());
-        // btnUploadFile.click();
+        //btnUploadFile.click();
 
     }
 
