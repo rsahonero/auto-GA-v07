@@ -1,17 +1,25 @@
 package testingui.diplomadoumss.org.managepage.dashboard;
 
+<<<<<<< HEAD
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+=======
 import static testingui.diplomadoumss.org.manageevents.Event.*;
 
+>>>>>>> 69bc16005c119c10572e887f82431b809b02426b
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.managepage.BasePage;
 
+<<<<<<< HEAD
+import static testingui.diplomadoumss.org.manageevents.Event.*;
+
+=======
 /**
  * @author Marcelo Garay
  * @project testingui.diplomadoumss.org
  */
+>>>>>>> 69bc16005c119c10572e887f82431b809b02426b
 public class Dashboard extends BasePage {
 
     @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(text(), 'Bookings')]")
@@ -20,6 +28,7 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Cars') and @aria-expanded='false']")
     private WebElement carsExpand;
 
+<<<<<<< HEAD
     @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Accounts') and @aria-expanded='false']")
     private WebElement accountsExpand;
 
@@ -47,12 +56,18 @@ public class Dashboard extends BasePage {
 
     public Dashboard() {
          avoidToSecond(3);
+=======
+    public Dashboard() {
+//        isWebElementVisible(bookingLink);
+        avoidToUse(3);
+>>>>>>> 69bc16005c119c10572e887f82431b809b02426b
     }
 
     public Dashboard clickCarsExpand() {
         clickWebElement(carsExpand);
         return this;
     }
+<<<<<<< HEAD
 
     public Dashboard clickAccountsExpand() {
         clickWebElement(accountsExpand);
@@ -98,4 +113,6 @@ public class Dashboard extends BasePage {
         clickWebElement(movedownClicked);
         return this;
     }
+=======
+>>>>>>> 69bc16005c119c10572e887f82431b809b02426b
 }
