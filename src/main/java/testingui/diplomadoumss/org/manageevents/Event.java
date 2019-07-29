@@ -1,5 +1,6 @@
 package testingui.diplomadoumss.org.manageevents;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import testingui.diplomadoumss.org.core.DriverManager;
@@ -27,5 +28,11 @@ public class Event {
         } catch (Exception e) {
             System.out.println(e.fillInStackTrace());
         }
+    }
+
+    public static void moveToDown(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) DriverManager.getInstance().getWebDriver();
+        String scriptSidebar = "window.scrollBy(0, 1000)";
+        js.executeScript(scriptSidebar, element);
     }
 }

@@ -3,11 +3,15 @@ package testingui.diplomadoumss.org.stepsdefinitions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import org.openqa.selenium.WebDriver;
+import testingui.diplomadoumss.org.core.BroserType;
+import testingui.diplomadoumss.org.core.Browser;
+import testingui.diplomadoumss.org.core.DriverFactory;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.manageloadpage.LoadPage;
 import testingui.diplomadoumss.org.managepage.adminsmanagement.AdminsManagement;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.login.Login;
+import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 import java.sql.Driver;
 
@@ -56,12 +60,52 @@ public class LoginStepdefs {
     @And("^Click 'Blog' link on 'Blog Categories' Page$")
     public void cliccBlogLinkOnBlogCategoriesPage() {
         dashboard.clickBlogExpand();
-        dashboard.clickBlogCategoriesOption();
+        dashboard.clickOnPostsOption();
+        //dashboard.clickBlogCategoriesOption();
     }
 
     @And("^Move Down The Sidebar Menu$")
     public void moveDownTheSidebarMenu() {
-        WebDriver driver = webDriver;
-        dashboard.moveTheScrollSidebarToDown(driver);
+        dashboard.moveTheScrollSidebarToDown();
+    }
+
+    @And("^Click 'Blog' menu$")//TesteCase 01
+    public void clickBlogMenu() {
+        dashboard.clickBlogExpand();
+    }
+
+    @And("^Click 'Blog' link on 'Posts' Page$") //TestCase 02
+    public void clickBlogLinkOnPostsPage() {
+        dashboard.clickOnPostsOption();
+    }
+
+    @And("^Click 'Posts' link on Table Header Name$")       //TestCase 03
+    public void clickPostsLinkOnTableHeaderName() {
+        dashboard.clickOnTableHeaderName();
+    }
+
+    @And("^Click 'Posts' link on Table Header Category$")   //TestCase 04
+    public void clickPostsLinkOnTableHeaderCategory() {
+        dashboard.clickOnTableHeaderCategory();
+    }
+
+    @And("^Click 'Posts' link on Table Header Date$")       //TestCase 05
+    public void clickPostsLinkOnTableHeaderDate() {
+        dashboard.clickOnTableHeaderDate();
+    }
+
+    @And("^Click 'Posts' link on Table Header Order$")      //TestCase 06
+    public void clickPostsLinkOnTableHeaderOrder() {
+        dashboard.clickOnTableHeaderOrder();
+    }
+
+    @And("^Click 'Posts' link on Table Header Status$")     //TestCase 07
+    public void clickPostsLinkOnTableHeaderStatus() {
+        dashboard.clickOnTableHeaderStatus();
+    }
+
+    @And("^Click 'Posts' link on Table Header Thumb$")      //TestCase 08
+    public void clickPostsLinkOnTableHeaderThumb() {
+        dashboard.clickOnTableHeaderThumb();
     }
 }
