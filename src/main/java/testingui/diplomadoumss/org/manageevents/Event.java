@@ -17,6 +17,10 @@ public class Event {
         webElement.sendKeys(value);
     }
 
+//    public static void moveToElment (WebElement webElement ){
+//        DriverManager.getInstance().getWebDriverWait().until()
+//    }
+
     public static void isWebElementVisible(WebElement element){
         DriverManager.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOf(element));
     }

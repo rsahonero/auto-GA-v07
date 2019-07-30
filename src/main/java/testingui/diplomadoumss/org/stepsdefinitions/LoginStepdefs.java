@@ -5,6 +5,7 @@ import cucumber.api.java.en.Given;
 import org.openqa.selenium.WebDriver;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.manageloadpage.LoadPage;
+import testingui.diplomadoumss.org.manageloadpage.LoadPageNasa;
 import testingui.diplomadoumss.org.managepage.adminsmanagement.AdminsManagement;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.login.Login;
@@ -14,7 +15,7 @@ import static testingui.diplomadoumss.org.manageevents.Event.avoidToSecond;
 public class LoginStepdefs {
 
     private Login login;
-
+    private LoadPageNasa loadPageNasa;
     private Dashboard dashboard;
 
     private AdminsManagement adminsManagement;
@@ -40,6 +41,17 @@ public class LoginStepdefs {
         dashboard.clickPaymentGatewaysOption();
         avoidToSecond(4);
         dashboard.clickMoveDown();
+        avoidToSecond(4);
+        dashboard.clickMoveUp();
+        avoidToSecond(5);
+        dashboard.clickDropdown();
+        avoidToSecond(4);
+        dashboard.clickRecord();
+        dashboard.clickActivate();
+        dashboard.clickDeactivate();
+        dashboard.clickDeactivatedropdown();
+        avoidToSecond(2);
+        dashboard.clickChanges();
     }
 
     @And("^Click 'Accounts' link on 'Left Panel' Page$")
@@ -57,15 +69,23 @@ public class LoginStepdefs {
         dashboard.clickPrintOption();
     }
 
-    @And("^Click 'Blog' link on 'Blog Categories' Page$")
-    public void cliccBlogLinkOnBlogCategoriesPage() {
-        dashboard.clickBlogExpand();
-        dashboard.clickBlogCategoriesOption();
-    }
 
     @And("^Move Down The Sidebar Menu$")
     public void moveDownTheSidebarMenu() {
         WebDriver driver = webDriver;
         dashboard.moveTheScrollSidebarToDown(driver);
     }
+
+    @Given("^I load Nasa$")
+    public void iLoadNasa() throws Throwable {
+        loadPageNasa = LoadPageNasa.IloadNasa();
+    }
+
+    @And("^click 'Nasa' link on 'Left Panel' page$")
+    public void clickNasaLinkOnLeftPanelPage() throws Throwable {
+        dashboard.clickNasaApi();
+        dashboard.clickNasaApi2();
+
+    }
+
 }
