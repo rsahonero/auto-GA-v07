@@ -62,6 +62,12 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//div[@id='content']/div[@class='panel panel-default']/div/div/div/div/div/div/a[contains(text(),'Print')]")
     private WebElement buttonPrint;
 
+    @FindBy(xpath = "//div[@class='tocify-wrapper']/div[@id='toc']/ul[@id='tocify-header1']/li/a[contains(., 'NASA API Listing')]")
+    private WebElement menuNasaApiListing;
+
+    @FindBy(xpath = "//div[@class='tocify-wrapper']/div[@id='toc']/ul[@id='tocify-header8']/li/a[contains(., 'Earth')]")
+    private WebElement menuEarth;
+
     public Dashboard() {
         avoidToSecond(3);
     }
@@ -128,5 +134,13 @@ public class Dashboard extends BasePage {
 
     public void clickOnTableHeaderThumb() {
         clickWebElement(tableHeaderThumb);
+    }
+
+    public void clickOnNasaApiListing() {
+        clickWebElement(menuNasaApiListing);
+    }
+
+    public void clickOnMenuEarth() {
+        clickWebElement(menuEarth);
     }
 }

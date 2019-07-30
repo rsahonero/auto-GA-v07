@@ -15,6 +15,8 @@ import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 import java.sql.Driver;
 
+import static testingui.diplomadoumss.org.manageevents.Event.avoidToSecond;
+
 public class LoginStepdefs {
 
     private Login login;
@@ -108,4 +110,25 @@ public class LoginStepdefs {
     public void clickPostsLinkOnTableHeaderThumb() {
         dashboard.clickOnTableHeaderThumb();
     }
+
+    @Given("^I load NASA page$")
+    public void iLoadNASAPage() throws Throwable {
+        dashboard = LoadPage.loadNASApage();
+    }
+
+    @And("^Click NASA API Listing$")
+    public void clickNASAAPIListing() throws Throwable {
+        dashboard.clickOnNasaApiListing();
+        avoidToSecond(3);
+        dashboard.clickOnNasaApiListing(); //Click NASA API Listing (segunda vez)
+    }
+
+    @And("^Click on MENU Earth$")
+    public void clickOnMENUEarth() {
+        avoidToSecond(3);
+        dashboard.clickOnMenuEarth();
+    }
+
+    //clickOnMenuEarth
+
 }

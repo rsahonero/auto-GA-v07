@@ -57,6 +57,12 @@ Feature: Validation of the login page2
     And Click 'Blog' link on 'Posts' Page
     And Click 'Posts' link on Table Header Thumb
 
+  Scenario: TestCase QUIZ: Click NASA API Listing
+    Given I load NASA page
+    And Click NASA API Listing
+    And Click on MENU Earth
+
+
   #
     #TestCase 05
     #And Click 'Posts' link on Table Header Date
