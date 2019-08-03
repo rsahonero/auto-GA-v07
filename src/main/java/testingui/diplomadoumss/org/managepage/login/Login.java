@@ -43,4 +43,8 @@ public class Login extends BasePage {
                 .setPassword(PropertyAccesor.getInstance().getPassword())
                 .clickLogin();
     }
+
+    public String getLoginLabelButton() {
+        return getWebElementText(loginButton);
+    }
 }

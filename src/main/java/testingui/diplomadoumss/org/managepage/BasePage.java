@@ -11,6 +11,8 @@ import testingui.diplomadoumss.org.core.DriverManager;
 public class BasePage {
     protected WebDriver webDriver;
 
+    protected final String PANEL_LEFT_OPTION = "//ul[@id='%s']/li/a[text()='%s']";
+
     public BasePage() {
         this.webDriver = DriverManager.getInstance().getWebDriver();
         PageFactory.initElements(webDriver, this);
