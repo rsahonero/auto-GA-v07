@@ -20,16 +20,16 @@ public class Login extends BasePage {
     private WebElement loginButton;
 
     public Login() {
-        avoidToSecond(2);
+        avoidToUse(2);
     }
 
     public Login setEmail(String email) {
-        fielWebElement(emailTextField, email);
+        fillWebElement(emailTextField, email);
         return this;
     }
 
     public Login setPassword(String password){
-        fielWebElement(passwordTextField, password);
+        fillWebElement(passwordTextField, password);
         return this;
     }
 

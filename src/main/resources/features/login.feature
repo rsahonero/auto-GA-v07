@@ -94,3 +94,82 @@ Feature: Validation of the login page
     And Set parameters on 'SEARCH' form
     And Click 'GO' button to search
     And Click 'Logout' button on 'Header' page
+
+   # General > Payment Gateways
+
+  Scenario: Validate que la lista de Gayteways sea visible
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'General' link on 'Left Panel' Page
+    And Click 'Logout' button on 'Header' page
+  #2
+  Scenario: Validar que el registro de la lista Payment se mueve una posicion debajo cuando se presiona la fecha "moveDown"
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'General' link on 'Left Panel' Page
+    And Click 'Movedown' move record one position down
+    And Click 'Logout' button on 'Header' page
+
+   #3
+  Scenario: Validar que el registro de la lista Payment se mueve una posicion arriba cuando se presiona la fecha "upDown"
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'General' link on 'Left Panel' Page
+    And Click 'Updown' move record one position arriba
+    And Click 'Logout' button on 'Header' page
+
+   #4
+  Scenario: Validar que el registro se muestra en la lista de Payments despues de presionar el boton Activate
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'General' link on 'Left Panel' Page
+    And Click 'Activate' link on 'Left Panel' Page
+    And Click 'Logout' button on 'Header' page
+
+   #5
+  Scenario: Validar que el “Nombre del registro” popup se cierra después de presionar el icono x
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'General' link on 'Left Panel' Page
+    And Click 'Close popup' icon x
+    And Click 'Logout' button on 'Header' page
+
+   #6
+  Scenario: Validar que el “Nombre del registro” popup se cierra después de presionar el botón CLOSE
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'General' link on 'Left Panel' Page
+    And Click 'Close popup' button Close
+    And Click 'Logout' button on 'Header' page
+
+   #7
+  Scenario: Validate que la lista de Slider sea visible
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'Slider' link on 'Left Panel' Page
+    And Click 'Logout' button on 'Header' page
+
+   #8
+  Scenario: Validate los registros de Slider se muestran seleccionados despues de presionar el checkbox
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'Slider' link on 'Left Panel' Page
+    And Click 'CheckSlider' el registro es seleccionado
+    And Click 'Logout' button on 'Header' page
+
+   #9
+  Scenario: Validate que el resumen del registro es visible despues de presionar el icono View
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'Slider' link on 'Left Panel' Page
+    And Click 'SliderView' el resumen registro es visible
+    And Click 'Logout' button on 'Header' page
+
+   #10
+  Scenario: Validate que una ventana emergente se muestra despues de presionar el botón “Print”
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'Slider' link on 'Left Panel' Page
+    And Click 'SliderPrint' imprimir registro
+    And Click 'Logout' button on 'Header' page
+

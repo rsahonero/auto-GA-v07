@@ -96,14 +96,71 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//a/strong[contains(text(), 'Logout')]")
     private WebElement logautLink;
 
+    @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'General') and @aria-expanded='false']")
+    private WebElement generalExpand;
+
+    @FindBy(xpath = "//ul[@id='social-sidebar-menu']//ul//a[contains(., 'Payment Gateways')]")
+    private WebElement  paymentsGaytwaysClicked;
+
+    @FindBy(xpath = "//*[@id=\"accordion\"]/form[3]/div/div[1]/h4/div/span[2]")
+    private WebElement  movedownClicked;
+
+    @FindBy(xpath = "//*[@id=\"accordion\"]/form[2]/div/div[1]/h4/div/span[1]")
+    private WebElement  moveupClicked;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/form/div[1]/select")
+    private WebElement  activateClicked;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/form/div[1]/select/option[3]")
+    private WebElement  activaterecordClicked;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/form/div[2]/input[2]")
+    private WebElement  activatebuttonClicked;
+
+    @FindBy(xpath = "//*[@id=\"accordion\"]/form[4]/div/div[1]/h4/div/a[2]")
+    private WebElement  desactivatebuttonClicked;
+
+    @FindBy(xpath = "//*[@id=\"deactivestripe\"]/div[2]/div/form/div[2]/div/div/select")
+    private WebElement  desactivatedropClicked;
+
+    @FindBy(xpath = "//*[@id=\"deactivestripe\"]/div[2]/div/form/div[2]/div/div/select/option[3]")
+    private WebElement  desactivaterecordClicked;
+
+    @FindBy(xpath = "//*[@id=\"deactivepaypalexpress\"]/div[2]/div/form/div[3]/button[2]")
+    private WebElement  saveclicked;
+
+    @FindBy(xpath = "//*[@id=\"deactivebanktransfer\"]/div[2]/div/form/div[1]/button/span")
+    private WebElement  closepopupclicked;
+
+    @FindBy(xpath = "//*[@id=\"deactivebanktransfer\"]/div[2]/div/form/div[3]/button[1]")
+    private WebElement  buttonCloseClicked;
+
+    @FindBy(xpath = "//*[@id=\"menu-ui\"]/li[6]/a")
+    private WebElement expandSliderClicked;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[1]/div")
+    private WebElement checkSliderClicked;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[10]/span/a[1]")
+    private WebElement viewSliderClicked;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[1]/a")
+    private WebElement viewreturnClicked;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[1]/div[1]/a[1]")
+    private WebElement printsliderClicked;
+
+    @FindBy(xpath = " //*[@id=\"order_49\"]")
+    private WebElement ordersliderClicked;
+
     public void logoutLink() {
         clickWebElement(logautLink);
-        avoidToSecond(4);
+        avoidToUse(4);
     }
 
     public Dashboard() {
         //isWebElementVisible(bookingLink);
-        avoidToSecond(3);
+        avoidToUse(3);
     }
 
     public Dashboard clickCarsExpand() {
@@ -143,55 +200,55 @@ public class Dashboard extends BasePage {
     }
 
     public Dashboard clickAscOrderFirstNameColumnOption() {
-        avoidToSecond(3);
+        avoidToUse(3);
         clickWebElement(clickAscOrderFirstNameColumn);
         return this;
     }
 
     public Dashboard clickDescOrderLastNameColumnOption() {
-        avoidToSecond(3);
+        avoidToUse(3);
         clickWebElement(clickDescOrderLastNameColumn);
         return this;
     }
 
     public Dashboard clickAscOrderLastNameColumnOption() {
-        avoidToSecond(3);
+        avoidToUse(3);
         clickWebElement(clickAscOrderLastNameColumn);
         return this;
     }
 
     public Dashboard clickDescOrderEmailColumnOption() {
-        avoidToSecond(3);
+        avoidToUse(3);
         clickWebElement(clickDescOrderEmailColumn);
         return this;
     }
 
     public Dashboard clickAscOrderEmailColumnOption() {
-        avoidToSecond(3);
+        avoidToUse(3);
         clickWebElement(clickAscOrderEmailColumn);
         return this;
     }
 
     public Dashboard clickDescOrderActiveColumnOption() {
-        avoidToSecond(3);
+        avoidToUse(3);
         clickWebElement(clickDescOrderActiveColumn);
         return this;
     }
 
     public Dashboard clickAscOrderActiveColumnOption() {
-        avoidToSecond(3);
+        avoidToUse(3);
         clickWebElement(clickAscOrderActiveColumn);
         return this;
     }
 
     public Dashboard clickDescOrderLastLoginColumnOption() {
-        avoidToSecond(3);
+        avoidToUse(3);
         clickWebElement(clickDescOrderLastLoginColumn);
         return this;
     }
 
     public Dashboard clickAscOrderLastLoginColumnOption() {
-        avoidToSecond(3);
+        avoidToUse(3);
         clickWebElement(clickAscOrderLastLoginColumn);
         return this;
     }
@@ -241,7 +298,7 @@ public class Dashboard extends BasePage {
     }
 
     public Dashboard setPhrase(String phrase) {
-        fielWebElement(phraseTextField, phrase);
+        fillWebElement(phraseTextField, phrase);
         return this;
     }
 
@@ -252,6 +309,101 @@ public class Dashboard extends BasePage {
 
     public Dashboard clickResetOption() {
         clickWebElement(resetClicked);
+        return this;
+    }
+
+    public Dashboard clickMoveDown(){
+        clickWebElement(movedownClicked);
+        return this;
+    }
+
+    public Dashboard clickSlidercheck(){
+        clickWebElement(checkSliderClicked);
+        return this;
+    }
+
+    public Dashboard clickSliderexpand(){
+        clickWebElement(expandSliderClicked);
+        return this;
+    }
+
+    public Dashboard clickSliderView(){
+        clickWebElement(viewSliderClicked);
+        return this;
+    }
+
+    public Dashboard clickreturnview(){
+        clickWebElement(viewreturnClicked);
+        return this;
+    }
+
+    public Dashboard clickprintSlider(){
+        clickWebElement(printsliderClicked);
+        return this;
+    }
+
+    public Dashboard clickorderSlider(){
+        clickWebElement(ordersliderClicked);
+        return this;
+    }
+
+    public Dashboard clickdropup(){
+        clickWebElement(moveupClicked);
+        return this;
+    }
+
+    public Dashboard clickactivate(){
+        clickWebElement(activateClicked);
+        return this;
+    }
+
+    public Dashboard clickactivaterecord(){
+        clickWebElement(activaterecordClicked);
+        return this;
+    }
+
+    public Dashboard clickactivatebutton(){
+        clickWebElement(activatebuttonClicked);
+        return this;
+    }
+
+    public Dashboard clickdesactivatebutton(){
+        clickWebElement(desactivatebuttonClicked);
+        return this;
+    }
+
+    public Dashboard clickclosepopup(){
+        clickWebElement(closepopupclicked);
+        return this;
+    }
+
+    public Dashboard clickbuttonClose(){
+        clickWebElement(buttonCloseClicked);
+        return this;
+    }
+
+    public Dashboard clickdesactivatedrop(){
+        clickWebElement(desactivatedropClicked);
+        return this;
+    }
+
+    public Dashboard clickdesactivaterecord(){
+        clickWebElement(desactivaterecordClicked);
+        return this;
+    }
+
+    public Dashboard clicksave(){
+        clickWebElement(saveclicked);
+        return this;
+    }
+
+    public Dashboard clickPaymentGatewaysOption() {
+        clickWebElement(paymentsGaytwaysClicked);
+        return this;
+    }
+
+    public Dashboard clickGeneralExpand() {
+        clickWebElement(generalExpand);
         return this;
     }
 }

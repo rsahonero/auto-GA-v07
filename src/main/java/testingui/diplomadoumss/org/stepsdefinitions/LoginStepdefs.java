@@ -12,7 +12,7 @@ import testingui.diplomadoumss.org.managepage.header.Header;
 import testingui.diplomadoumss.org.managepage.login.Login;
 import testingui.diplomadoumss.org.managepage.nasapage.NasaPage;
 
-import static testingui.diplomadoumss.org.manageevents.Event.avoidToSecond;
+import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
 
 public class LoginStepdefs {
 
@@ -160,13 +160,13 @@ public class LoginStepdefs {
 
     @And("^Click NASA API Listing One More$")
     public void clickNASAAPIListingOneMore() {
-        avoidToSecond(3);
+        avoidToUse(3);
         nasaPage.clickNasaApiListingOption();
     }
 
     @And("^click Earth Option on Left Panel$")
     public void clickEarthOptionOnLeftPanel() {
-        avoidToSecond(3);
+        avoidToUse(3);
         nasaPage.clickEarthOption();
     }
 
@@ -182,19 +182,19 @@ public class LoginStepdefs {
 
     @And("^Click '25' button to display the list on 25 to 25$")
     public void click25ButtonToDisplayTheListOn25To25() {
-        avoidToSecond(3);
+        avoidToUse(3);
         dashboard.clickNumber25Option();
     }
 
     @And("^Click '50' button to display the list on 50 to 50$")
     public void click50ButtonToDisplayTheListOn50To50() {
-        avoidToSecond(3);
+        avoidToUse(3);
         dashboard.clickNumber50Option();
     }
 
     @And("^Click '100' button to display the list on 100 to 100$")
     public void click100ButtonToDisplayTheListOn100To100() {
-        avoidToSecond(3);
+        avoidToUse(3);
         dashboard.clickNumber100Option();
     }
 
@@ -205,16 +205,16 @@ public class LoginStepdefs {
 
     @And("^Set parameters on 'SEARCH' form$")
     public void setParametersOnSEARCHForm() {
-        avoidToSecond(2);
+        avoidToUse(2);
         dashboard.setPhrase("Raul");
 
     }
 
     @And("^Click 'GO' button to search$")
     public void clickGOButtonToSearch() {
-        avoidToSecond(2);
+        avoidToUse(2);
         dashboard.clickGoOption();
-        avoidToSecond(3);
+        avoidToUse(3);
         dashboard.clickResetOption();
     }
 
@@ -222,4 +222,71 @@ public class LoginStepdefs {
     public void clickLogoutButtonOnHeaderPage() {
         dashboard.logoutLink();
     }
+
+    @And("^Click 'General' link on 'Left Panel' Page$")
+    public void clickGeneralLinkOnLeftPanelPage() throws  Throwable {
+        dashboard.clickGeneralExpand();
+        avoidToUse(4);
+        dashboard.clickPaymentGatewaysOption();
+        avoidToUse(3);
+    }
+    @And("^Click 'Movedown' move record one position down$")
+    public void clickMovedownOnpositionDown() throws Throwable {
+        dashboard.clickMoveDown();
+        avoidToUse(3);
+    }
+
+    @And("^Click 'Updown' move record one position arriba$")
+    public void clickMoveUpOnpositionUp () throws Throwable {
+        dashboard.clickdropup();
+        avoidToUse(3);
+    }
+
+    @And("^Click 'Activate' link on 'Left Panel' Page$")
+    public void clickActivateOnLeftPanelPage() throws Throwable {
+        dashboard.clickactivate();
+        dashboard.clickactivaterecord();
+        avoidToUse(4);
+        dashboard.clickactivatebutton();
+    }
+
+    @And("^Click 'Close popup' icon x$")
+    public void clickClosePopupIconx() throws Throwable {
+        dashboard.clickdesactivatebutton();
+        avoidToUse(2);
+        dashboard.clickclosepopup();
+        avoidToUse(2);
+    }
+
+    @And("^Click 'Close popup' button Close$")
+    public void clickClosePopupButtonClose() throws Throwable {
+        dashboard.clickdesactivatebutton();
+        avoidToUse(2);
+        dashboard.clickbuttonClose();
+        avoidToUse(2);
+    }
+
+    @And("^Click 'Slider' link on 'Left Panel' Page$")
+    public void clickSliderLinkOnLeftPanelPage() throws  Throwable {
+        dashboard.clickGeneralExpand();
+        avoidToUse(2);
+        dashboard.clickSliderexpand();
+        avoidToUse(2);
+    }
+
+    @And("^Click 'CheckSlider' el registro es seleccionado$")
+    public void clickSliderCheckRegistroSeleccionado() throws  Throwable {
+        dashboard.clickSlidercheck();
+    }
+
+    @And("^Click 'SliderView' el resumen registro es visible$")
+    public void clickSliderViewRegistroVisible() throws  Throwable {
+        dashboard.clickSliderView();
+    }
+
+    @And("^Click 'SliderPrint' imprimir registro$")
+    public void clickSliderPrintRegistro() throws  Throwable {
+        dashboard.clickprintSlider();
+    }
+
 }
