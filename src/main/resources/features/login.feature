@@ -94,13 +94,3 @@ Feature: Validation of the login page
     And Set parameters on 'SEARCH' form
     And Click 'GO' button to search
     And Click 'Logout' button on 'Header' page
-
-    #QUIZ
-  #Scenario: Validate the 'URL' is the same
-   #Given I load API NASA Page
-    #And Click NASA API Listing
-    #And Click NASA API Listing One More
-    #And click Earth Option on Left Panel
-    #And click Imagery Option On Sub Menu
-    #And Obtener el siguiente link de la seccion: GET https://api.nasa.gov/planetary/earth/imagery
-    #And Comparar con el texto "GET https://api.nasa.gov/planetary/earth/imagery" si es igual

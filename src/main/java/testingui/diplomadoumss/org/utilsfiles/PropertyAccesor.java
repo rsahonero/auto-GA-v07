@@ -58,4 +58,20 @@ public class PropertyAccesor {
     public int getExplicitTimeWait() {
         return Integer.parseInt(prop.getProperty("explicitTimeWait"));
     }
+
+    public int getImplicitTimeWait() {
+        return Integer.parseInt(prop.getProperty("implicitTimeWait"));
+    }
+
+    public int getExplicitTimeWait() {
+        return Integer.parseInt(prop.getProperty("explicitTimeWait"));
+    }
+
+    public String getEmail(){
+        return prop.getProperty("username");
+    }
+
+    public String getPassword(){
+        return prop.getProperty("password");
+    }
 }
