@@ -9,11 +9,12 @@ Feature: Widgest
     Then The "Test Widgets" must be shown in the table
     And Logout
 
-    Scenario: Delete a new Widgets
+  Scenario: Delete a new Widgets
     Given I load PHP travels
     And set my credencials  on 'Login' page
     When click 'General' link on 'Left Panel' page
     And click Deleted Icon in the 'Test Widgets'
+    And click Accept popup
     Then the "Test Widgets" register should not shown in the table
     And Logout
 

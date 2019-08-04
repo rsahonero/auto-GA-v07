@@ -71,6 +71,11 @@ public class WidgetsStepdefs {
     }
 
 
+    @And("^click Accept popup$")
+    public void clickAcceptPopup() {
+        widgets.clickAcceptPopup();
+    }
+
     @Then("^the \"([^\"]*)\" register should not shown in the table$")
     public void theRegisterShouldNotShownInTheTable(String exp) throws Throwable {
         boolean actual= widgets.existNameElement(exp);

@@ -31,7 +31,8 @@ public class Event {
     public static Boolean existElement(List<WebElement> elements, String content, int n) {
         boolean isNameExist = false;
         int i = 0;
-        while (!isNameExist) {
+        int size = elements.size();
+        while (isNameExist==false && i < size) {
             List<WebElement> cells = elements.get(i).findElements(By.cssSelector("td"));
             isNameExist = cells.get(n).getText().contains(content);
             System.out.println(cells.get(n).getText());

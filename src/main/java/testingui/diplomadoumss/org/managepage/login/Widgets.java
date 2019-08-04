@@ -138,4 +138,10 @@ public class Widgets extends BasePage {
     public void clickGo() {
         Event.clickWebElement(goButton);
     }
+
+    public void clickAcceptPopup() {
+        Event.avoidToUse(2);
+        webDriver.switchTo().alert().accept();
+        Event.avoidToUse(3);
+    }
 }
