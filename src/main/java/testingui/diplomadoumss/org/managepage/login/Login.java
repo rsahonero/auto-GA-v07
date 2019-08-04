@@ -44,25 +44,7 @@ public class Login extends BasePage {
                 .clickLogin();
     }
 
-    public Login setPassword(String password){
-        fillWebElement(passwordTextField, password);
-        return this;
-    }
-
-    public Dashboard clickLoginButton() {
-        clickWebElement(loginButton);
-        return new Dashboard();
-    }
-
-    public Dashboard setCredentials() {
-        return setEmail(PropertyAccesor.getInstance().getEmail()).
-                setPassword(PropertyAccesor.getInstance().getPassword()).
-                clickLoginButton();
-    }
-
     public String getLoginLabelButton() {
         return getWebElementText(loginButton);
     }
-
-
 }
