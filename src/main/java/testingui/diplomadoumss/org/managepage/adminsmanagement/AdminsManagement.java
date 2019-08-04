@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.managepage.BasePage;
 
-import static testingui.diplomadoumss.org.manageevents.Event.avoidToSecond;
+import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
 import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
 
 public class AdminsManagement extends BasePage {
@@ -13,7 +13,7 @@ public class AdminsManagement extends BasePage {
     private WebElement printClicked;
 
     public AdminsManagement() {
-        avoidToSecond(4);
+        avoidToUse(4);
     }
 
     public AdminsManagement clickPrintOption() {

@@ -6,6 +6,13 @@ import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 import java.util.concurrent.TimeUnit;
 
+<<<<<<< HEAD
+=======
+/**
+ * @author Marcelo Garay
+ * @project testingui.diplomadoumss.org
+ */
+>>>>>>> 69bc16005c119c10572e887f82431b809b02426b
 public class DriverManager {
     private static DriverManager ourInstance = new DriverManager();
     private WebDriver webDriver;
@@ -21,7 +28,13 @@ public class DriverManager {
         BroserType browserType = BroserType.valueOf(PropertyAccesor.getInstance().getBrowser());
         Browser browser = DriverFactory.getInstance().getBrowser(browserType);
         webDriver =  browser.getWebDriver();
+<<<<<<< HEAD
+
         webDriver.manage().window().maximize();
+
+=======
+        webDriver.manage().window().maximize();
+>>>>>>> 69bc16005c119c10572e887f82431b809b02426b
         restorePreviousTimeWait();
     }
 
@@ -29,6 +42,10 @@ public class DriverManager {
         return webDriver;
     }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 69bc16005c119c10572e887f82431b809b02426b
     public void restorePreviousTimeWait() {
         setImplicitTimeWait(IMPLICIT_TIME_WAIT);
         setExplicitTimeWait(EXPLICIT_TIME_WAIT);

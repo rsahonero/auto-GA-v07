@@ -20,16 +20,26 @@ public class Login extends BasePage {
     private WebElement loginButton;
 
     public Login() {
-        avoidToUse(2);
+<<<<<<< HEAD
+        avoidToSecond(2);
     }
 
     public Login setEmail(String email) {
+        fielWebElement(emailTextField, email);
+=======
+//        isWebElementVisible(loginButton);
+        avoidToUse(2);
+    }
+
+    public Login setEmail(String email){
         fillWebElement(emailTextField, email);
+>>>>>>> 69bc16005c119c10572e887f82431b809b02426b
         return this;
     }
 
     public Login setPassword(String password){
-        fillWebElement(passwordTextField, password);
+<<<<<<< HEAD
+        fielWebElement(passwordTextField, password);
         return this;
     }
 
@@ -42,9 +52,26 @@ public class Login extends BasePage {
         return setEmail(PropertyAccesor.getInstance().getEmail())
                 .setPassword(PropertyAccesor.getInstance().getPassword())
                 .clickLogin();
+=======
+        fillWebElement(passwordTextField, password);
+        return this;
+>>>>>>> 69bc16005c119c10572e887f82431b809b02426b
+    }
+
+    public Dashboard clickLoginButton() {
+        clickWebElement(loginButton);
+        return new Dashboard();
+    }
+
+    public Dashboard setCredentials() {
+        return setEmail(PropertyAccesor.getInstance().getEmail()).
+                setPassword(PropertyAccesor.getInstance().getPassword()).
+                clickLoginButton();
     }
 
     public String getLoginLabelButton() {
         return getWebElementText(loginButton);
     }
+
+
 }
