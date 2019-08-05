@@ -13,9 +13,6 @@ import testingui.diplomadoumss.org.managepage.login.Login;
 import testingui.diplomadoumss.org.managepage.nasapage.NasaPage;
 import testingui.diplomadoumss.org.managepage.nasapage.NasaPage;
 import org.openqa.selenium.WebDriver;
-import testingui.diplomadoumss.org.core.BroserType;
-import testingui.diplomadoumss.org.core.Browser;
-import testingui.diplomadoumss.org.core.DriverFactory;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
@@ -301,12 +298,12 @@ public class LoginStepdefs {
         dashboard.clickprintSlider();
     }
 
-    @And("^Click 'Blog' menu$")//TesteCase 01
+    @And("^Click 'Blog' menu$")                             //TesteCase 01
     public void clickBlogMenu() {
-        //dashboard.clickBlogExpand();
+        dashboard.clickBlogExpand();
     }
 
-    @And("^Click 'Blog' link on 'Posts' Page$") //TestCase 02
+    @And("^Click 'Blog' link on 'Posts' Page$")             //TestCase 02
     public void clickBlogLinkOnPostsPage() {
         dashboard.clickOnPostsOption();
     }
@@ -341,4 +338,18 @@ public class LoginStepdefs {
         dashboard.clickOnTableHeaderThumb();
     }
 
+    @And("^Click 'Posts' on button 'Print'$")               //TestCase 09
+    public void clickPostsOnButtonPrint() {
+        dashboard.clickOnButtonPrint();
+    }
+
+    @And("^Click 'Posts' on button 'Export'$")              //TestCase 10
+    public void clickPostsOnButtonExport() {
+        dashboard.clickOnButtonExport();
+    }
+
+    @And("^Click On Logout Button$")
+    public void clickOnLogoutButton() {
+        dashboard.clickOnLogoutButton();
+    }
 }

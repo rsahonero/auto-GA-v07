@@ -2,6 +2,7 @@ package testingui.diplomadoumss.org.managepage.dashboard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.core.BroserType;
 import testingui.diplomadoumss.org.core.Browser;
@@ -196,9 +197,20 @@ public class Dashboard extends BasePage {
         avoidToUse(4);
     }
 
+    @FindBy(xpath = "//div[@id='content']/div[@class='panel panel-default']/div/div/div/div/div/div/a[contains(text(),'Export into CSV')]")
+    private WebElement buttonExport;
+
+    @FindBy(xpath = "//div[@class='wrapper']/div[@id='content']/nav/div/div[@id='nav']/ul[@class='nav navbar-nav navbar-right']/li[@id='logout']/a/strong[contains(text(),'Logout')]")
+    private WebElement buttonLogout;
+
     public Dashboard() {
         avoidToUse(3);
         //avoidToSecond(3);
+    }
+
+    public Dashboard clickBlogExpand() {
+        clickWebElement(blogExpand);
+        return this;
     }
 
     public Dashboard clickCarsExpand() {
@@ -473,5 +485,17 @@ public class Dashboard extends BasePage {
     public Dashboard clickGeneralExpand() {
         clickWebElement(generalExpand);
         return this;
+    }
+
+    public void clickOnButtonPrint() {
+        clickWebElement(buttonPrint);
+    }
+
+    public void clickOnButtonExport() {
+        clickWebElement(buttonExport);
+    }
+
+    public void clickOnLogoutButton() {
+        clickWebElement(buttonLogout);
     }
 }
