@@ -5,10 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import testingui.diplomadoumss.org.core.DriverManager;
 
-/**
- * @author Marcelo Garay
- * @project testingui.diplomadoumss.org
- */
 public class Event {
 
     public static void clickWebElement(WebElement webElement) {

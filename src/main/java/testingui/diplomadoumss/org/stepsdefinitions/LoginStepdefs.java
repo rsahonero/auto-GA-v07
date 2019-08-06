@@ -11,6 +11,11 @@ import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.header.Header;
 import testingui.diplomadoumss.org.managepage.login.Login;
 import testingui.diplomadoumss.org.managepage.nasapage.NasaPage;
+import testingui.diplomadoumss.org.managepage.nasapage.NasaPage;
+import org.openqa.selenium.WebDriver;
+import testingui.diplomadoumss.org.core.DriverManager;
+import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
+
 
 import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
 
@@ -21,6 +26,10 @@ public class LoginStepdefs {
     private Dashboard dashboard;
 
     private AdminsManagement adminsManagement;
+
+    private DriverManager driverManager;
+
+    private WebDriver webDriver;
 
     private NasaPage nasaPage;
 
@@ -289,4 +298,58 @@ public class LoginStepdefs {
         dashboard.clickprintSlider();
     }
 
+    @And("^Click 'Blog' menu$")                             //TesteCase 01
+    public void clickBlogMenu() {
+        dashboard.clickBlogExpand();
+    }
+
+    @And("^Click 'Blog' link on 'Posts' Page$")             //TestCase 02
+    public void clickBlogLinkOnPostsPage() {
+        dashboard.clickOnPostsOption();
+    }
+
+    @And("^Click 'Posts' link on Table Header Name$")       //TestCase 03
+    public void clickPostsLinkOnTableHeaderName() {
+        dashboard.clickOnTableHeaderName();
+    }
+
+    @And("^Click 'Posts' link on Table Header Category$")   //TestCase 04
+    public void clickPostsLinkOnTableHeaderCategory() {
+        dashboard.clickOnTableHeaderCategory();
+    }
+
+    @And("^Click 'Posts' link on Table Header Date$")       //TestCase 05
+    public void clickPostsLinkOnTableHeaderDate() {
+        dashboard.clickOnTableHeaderDate();
+    }
+
+    @And("^Click 'Posts' link on Table Header Order$")      //TestCase 06
+    public void clickPostsLinkOnTableHeaderOrder() {
+        dashboard.clickOnTableHeaderOrder();
+    }
+
+    @And("^Click 'Posts' link on Table Header Status$")     //TestCase 07
+    public void clickPostsLinkOnTableHeaderStatus() {
+        dashboard.clickOnTableHeaderStatus();
+    }
+
+    @And("^Click 'Posts' link on Table Header Thumb$")      //TestCase 08
+    public void clickPostsLinkOnTableHeaderThumb() {
+        dashboard.clickOnTableHeaderThumb();
+    }
+
+    @And("^Click 'Posts' on button 'Print'$")               //TestCase 09
+    public void clickPostsOnButtonPrint() {
+        dashboard.clickOnButtonPrint();
+    }
+
+    @And("^Click 'Posts' on button 'Export'$")              //TestCase 10
+    public void clickPostsOnButtonExport() {
+        dashboard.clickOnButtonExport();
+    }
+
+    @And("^Click On Logout Button$")
+    public void clickOnLogoutButton() {
+        dashboard.clickOnLogoutButton();
+    }
 }

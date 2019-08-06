@@ -2,8 +2,13 @@ package testingui.diplomadoumss.org.managepage.dashboard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+import testingui.diplomadoumss.org.core.BroserType;
+import testingui.diplomadoumss.org.core.Browser;
+import testingui.diplomadoumss.org.core.DriverFactory;
 import testingui.diplomadoumss.org.managepage.BasePage;
+import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 import static testingui.diplomadoumss.org.manageevents.Event.*;
 
@@ -153,14 +158,59 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = " //*[@id=\"order_49\"]")
     private WebElement ordersliderClicked;
 
+    //JaimeOjeda
+    @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Blog') and @aria-expanded='false']")
+    private WebElement blogExpand;
+
+    /*@FindBy(xpath = "//ul[@id='social-sidebar-menu']//ul[@id='Blog']//a[contains(., 'Blog Categories')]")
+    private WebElement blogCategoriesClicked;*/
+
+    @FindBy(xpath = "//ul[@id='social-sidebar-menu']//ul[@id='Blog']//a[contains(., 'Posts')]")
+    private WebElement subMenuPosts;
+
+    @FindBy(id = "sidebar")
+    private WebElement leftPanel;
+
+    @FindBy(xpath = "//div[@class='xcrud-list-container']/table//th[contains(text(),'Name')]")
+    private WebElement tableHeaderName;
+
+    @FindBy(xpath = "//div[@class='xcrud-list-container']/table//th[contains(text(),'Category')]")
+    private WebElement tableHeaderCategory;
+
+    @FindBy(xpath = "//div[@class='xcrud-list-container']/table//th[contains(text(),'Date')]")
+    private WebElement tableHeaderDate;
+
+    @FindBy(xpath = "//div[@class='xcrud-list-container']/table//th[contains(text(),'Order')]")
+    private WebElement tableHeaderOrder;
+
+    @FindBy(xpath = "//div[@class='xcrud-list-container']/table//th[contains(text(),'Status')]")
+    private WebElement tableHeaderStatus;
+
+    @FindBy(xpath = "//div[@class='xcrud-list-container']/table//th[contains(text(),'Thumb')]")
+    private WebElement tableHeaderThumb;
+
+    @FindBy(xpath = "//div[@id='content']/div[@class='panel panel-default']/div/div/div/div/div/div/a[contains(text(),'Print')]")
+    private WebElement buttonPrint;
+
     public void logoutLink() {
         clickWebElement(logautLink);
         avoidToUse(4);
     }
 
+    @FindBy(xpath = "//div[@id='content']/div[@class='panel panel-default']/div/div/div/div/div/div/a[contains(text(),'Export into CSV')]")
+    private WebElement buttonExport;
+
+    @FindBy(xpath = "//div[@class='wrapper']/div[@id='content']/nav/div/div[@id='nav']/ul[@class='nav navbar-nav navbar-right']/li[@id='logout']/a/strong[contains(text(),'Logout')]")
+    private WebElement buttonLogout;
+
     public Dashboard() {
-        //isWebElementVisible(bookingLink);
         avoidToUse(3);
+        //avoidToSecond(3);
+    }
+
+    public Dashboard clickBlogExpand() {
+        clickWebElement(blogExpand);
+        return this;
     }
 
     public Dashboard clickCarsExpand() {
@@ -387,9 +437,39 @@ public class Dashboard extends BasePage {
         return this;
     }
 
+    public Dashboard clickOnPostsOption() {
+        clickWebElement(subMenuPosts);
+        return this;
+    }
+
     public Dashboard clickdesactivaterecord(){
         clickWebElement(desactivaterecordClicked);
         return this;
+    }
+
+    public void clickOnTableHeaderName() {
+        clickWebElement(tableHeaderName);
+    }
+
+    public void clickOnTableHeaderCategory() {
+        avoidToUse(3);
+        clickWebElement(tableHeaderCategory);
+    }
+
+    public void clickOnTableHeaderDate() {
+        clickWebElement(tableHeaderDate);
+    }
+
+    public void clickOnTableHeaderOrder() {
+        clickWebElement(tableHeaderOrder);
+    }
+
+    public void clickOnTableHeaderStatus() {
+        clickWebElement(tableHeaderStatus);
+    }
+
+    public void clickOnTableHeaderThumb() {
+        clickWebElement(tableHeaderThumb);
     }
 
     public Dashboard clicksave(){
@@ -405,5 +485,17 @@ public class Dashboard extends BasePage {
     public Dashboard clickGeneralExpand() {
         clickWebElement(generalExpand);
         return this;
+    }
+
+    public void clickOnButtonPrint() {
+        clickWebElement(buttonPrint);
+    }
+
+    public void clickOnButtonExport() {
+        clickWebElement(buttonExport);
+    }
+
+    public void clickOnLogoutButton() {
+        clickWebElement(buttonLogout);
     }
 }
