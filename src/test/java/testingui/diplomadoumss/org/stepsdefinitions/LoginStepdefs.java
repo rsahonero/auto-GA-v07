@@ -12,8 +12,6 @@ import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.header.Header;
 import testingui.diplomadoumss.org.managepage.login.Login;
 
-import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
-
 /**
  * @author Marcelo Garay
  * @project testingui.diplomadoumss.org
@@ -26,7 +24,7 @@ public class LoginStepdefs {
 
     @Given("^I load PHP travels$")
     public void iLoadPHPTravels() throws Throwable {
-        login = LoadPage.loadPHPTravels();
+        login = LoadPage.loadPPHPTravels();
     }
 
     @And("^set my credencials  on 'Login' page$")
@@ -58,7 +56,7 @@ public class LoginStepdefs {
 
     @And("^click 'Logout' button on 'Header' page$")
     public void clickLogoutButtonOnHeaderPage() throws Throwable {
-        dashboard.logoutLink();
+        header.logoutLink();
     }
 
     @And("^fill email field using json file on 'Login' page$")
